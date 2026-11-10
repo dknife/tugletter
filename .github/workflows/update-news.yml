@@ -1,0 +1,32 @@
+name: Update 게임학부 소식
+
+# 학과 공지 게시판(tu.ac.kr)에서 제목을 매일 자동 수집해 news.js 를 갱신합니다.
+on:
+  schedule:
+    - cron: '0 21 * * *'      # 매일 06:00 KST (UTC 21:00)
+  workflow_dispatch:           # 수동 실행 버튼
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Scrape board titles
+        run: node scrape-news.js
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add news.js
+          if git diff --staged --quiet; then
+            echo "변경 없음 — 커밋 생략"
+          else
+            git commit -m "chore: 게임학부 소식 자동 갱신"
+            git push
+          fi
