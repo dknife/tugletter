@@ -24,7 +24,7 @@ window.NEWS = [
 window.ARCHIVE = [
   {
     id:'2026-special', issue:'2026 특별호', title:'제4회 TU 게임챌린지 2026',
-    period:'2026 · 공식 사이트', pub:'TU 게임챌린지 2026', cover:'assets/gc2026/poster.jpg',
+    period:'2026 · 공식 사이트', pub:'TU 게임챌린지 2026', cover:'assets/gc2026/ceremony-ceremony-2.jpg',
     external:'https://dknife.github.io/GameChallenge2026/', latest:true,
   },
   {
