@@ -2,6 +2,16 @@
 
 게임챌린지 소식과 게임학부 분기별 소식지를 모아 보여주는 정적 웹사이트입니다.
 
+**🌐 배포 주소: https://dknife.github.io/tugletter/**
+
+GitHub Pages(`main` 브랜치 루트)로 서비스됩니다. `main` 에 푸시하면 자동 반영됩니다.
+`.nojekyll` 로 Jekyll 처리를 끄고, 모든 경로를 상대경로로 작성해 `/tugletter/` 하위에서 동작합니다.
+
+## 게임학부 소식 자동 갱신
+학과 공지 게시판 제목은 `.github/workflows/update-news.yml` 이 **매일 06:00(KST)** `scrape-news.js` 를
+실행해 `news.js` 를 갱신·커밋합니다. (저장소 Actions 탭에서 수동 실행도 가능)
+정적 페이지는 브라우저에서 tu.ac.kr 을 직접 호출할 수 없어(CORS), 이렇게 서버 밖에서 수집해 반영합니다.
+
 ## 구성 파일
 - `index.html` — 메인 홈페이지 (게임챌린지 2026 · 게임학부 소식 · 소식지 아카이브)
 - `newsletter.html` — 소식지 1개를 보여주는 템플릿. `newsletter.html?id=<호ID>` 로 열립니다.
