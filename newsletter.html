@@ -219,13 +219,10 @@
     const prev = list[idx - 1]; // newer
     const next = list[idx + 1]; // older
     const pager = document.getElementById('pager');
-    const prevHtml = prev
-      ? `<a class="prev" href="newsletter.html?id=${prev.id}"><span class="dir">← 최신 호</span><span class="ttl">${prev.issue}</span></a>`
-      : `<a class="prev disabled"><span class="dir">← 최신 호</span><span class="ttl">없음</span></a>`;
-    const nextHtml = next
-      ? `<a class="next" href="newsletter.html?id=${next.id}"><span class="dir">이전 호 →</span><span class="ttl">${next.issue}</span></a>`
-      : `<a class="next disabled"><span class="dir">이전 호 →</span><span class="ttl">없음</span></a>`;
-    pager.innerHTML = prevHtml + nextHtml;
+    const nav = (it, cls, dir) => it
+      ? `<a class="${cls}" href="${it.external || 'newsletter.html?id=' + it.id}"${it.external ? ' target="_blank" rel="noopener"' : ''}><span class="dir">${dir}</span><span class="ttl">${it.issue}${it.external ? ' ↗' : ''}</span></a>`
+      : `<a class="${cls} disabled"><span class="dir">${dir}</span><span class="ttl">없음</span></a>`;
+    pager.innerHTML = nav(prev, 'prev', '← 최신 호') + nav(next, 'next', '이전 호 →');
   }
 </script>
 </body>

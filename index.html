@@ -208,6 +208,8 @@
   .nl-card:hover { transform: translateY(-5px); border-color: var(--accent); box-shadow: 0 16px 40px rgba(0,0,0,.4); }
   .nl-card:hover .cover { transform: scale(1.06); }
   .nl-card .content { position: relative; z-index: 2; }
+  .nl-card.latest { border-color: rgba(124,92,255,.6); box-shadow: 0 0 0 1px rgba(124,92,255,.4), 0 14px 36px rgba(124,92,255,.22); }
+  .nl-badge { display: inline-block; margin-bottom: 8px; font-size: .68rem; font-weight: 900; letter-spacing: 1.5px; color: #0a0a12; background: var(--grad); padding: 4px 11px; border-radius: 999px; }
   .nl-card .issue { font-size: .72rem; font-weight: 700; letter-spacing: 1.5px; color: var(--accent-2); text-transform: uppercase; }
   .nl-card h4 { font-size: 1.12rem; font-weight: 700; margin: 8px 0 4px; }
   .nl-card .open { font-size: .84rem; color: var(--muted); display: inline-flex; align-items: center; gap: 6px; margin-top: 6px; }
@@ -575,14 +577,16 @@
   const grid = document.getElementById('nlGrid');
   ARCHIVE.forEach(a => {
     const el = document.createElement('a');
-    el.href = `newsletter.html?id=${a.id}`;
-    el.className = 'nl-card reveal';
+    if (a.external) { el.href = a.external; el.target = '_blank'; el.rel = 'noopener'; }
+    else el.href = `newsletter.html?id=${a.id}`;
+    el.className = 'nl-card reveal' + (a.latest ? ' latest' : '');
     el.innerHTML = `
       ${a.cover ? `<img class="cover" src="${a.cover}" alt="${a.title}" loading="lazy" />` : ''}
       <div class="content">
+        ${a.latest ? '<span class="nl-badge">LATEST</span>' : ''}
         <div class="issue">${a.issue}</div>
         <h4>${a.title}</h4>
-        <span class="open">열어보기 →</span>
+        <span class="open">${a.external ? '공식 사이트 ↗' : '열어보기 →'}</span>
       </div>`;
     grid.appendChild(el);
   });

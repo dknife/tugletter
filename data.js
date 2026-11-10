@@ -23,6 +23,11 @@ window.NEWS = [
 */
 window.ARCHIVE = [
   {
+    id:'2026-special', issue:'2026 특별호', title:'제4회 TU 게임챌린지 2026',
+    period:'2026 · 공식 사이트', pub:'TU 게임챌린지 2026', cover:'assets/gc2026/poster.jpg',
+    external:'https://dknife.github.io/GameChallenge2026/', latest:true,
+  },
+  {
     id:'2025-q4', issue:'2025 · 4분기', title:"동명대 게임학부 '25-4분기 소식지",
     period:'2025.10 – 12', pub:'2025.11.22 발행 · 강영민 교수', cover:'assets/cover-2025-q4.jpg',
     sourceSway:'https://sway.cloud.microsoft/JPasLtlByjTwysGH?ref=Link',
