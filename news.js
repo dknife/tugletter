@@ -1,7 +1,7 @@
 /* 게임그래픽전공 공지 게시판에서 자동 수집한 제목 목록
    출처: https://www.tu.ac.kr/gart/sub05_01.do
    수집 스크립트: scrape-news.js  (갱신하려면  node scrape-news.js  재실행)
-   총 15건 */
+   총 14건 */
 window.NEWS_URL = "https://www.tu.ac.kr/gart/sub05_01.do";
 window.NEWS = [
   {
@@ -31,13 +31,6 @@ window.NEWS = [
     "name": "정다연",
     "notice": true,
     "href": "https://www.tu.ac.kr/gart/?mode=view&articleNo=424251&article.offset=0&articleLimit=10"
-  },
-  {
-    "title": "2026학년도 2학기 Mach Game Sprint2 교과목 안내 (11/13(금)~11/15(일))",
-    "date": "2026-05-21",
-    "name": "정다연",
-    "notice": true,
-    "href": "https://www.tu.ac.kr/gart/?mode=view&articleNo=152597&article.offset=0&articleLimit=10"
   },
   {
     "title": "「나를 담고, 안심을 잇다」 봉사활동 참여학생 모집",
