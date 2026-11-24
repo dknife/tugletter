@@ -1,9 +1,16 @@
 /* 게임그래픽전공 공지 게시판에서 자동 수집한 제목 목록
    출처: https://www.tu.ac.kr/gart/sub05_01.do
    수집 스크립트: scrape-news.js  (갱신하려면  node scrape-news.js  재실행)
-   총 13건 */
+   총 14건 */
 window.NEWS_URL = "https://www.tu.ac.kr/gart/sub05_01.do";
 window.NEWS = [
+  {
+    "title": "2027-1학기 국가장학금 1차 신청기간 안내(2026. 11 . 24. (화) 9:00 ~)",
+    "date": "2026-11-23",
+    "name": "정다연",
+    "notice": true,
+    "href": "https://www.tu.ac.kr/gart/?mode=view&articleNo=429946&article.offset=0&articleLimit=10"
+  },
   {
     "title": "Mach Academy 4차 전문가 특강 '게임의 첫인상을 디자인하다 - AI로 설계하는 게임 네이밍과 타이틀 디자인' 안내",
     "date": "2026-10-16",
