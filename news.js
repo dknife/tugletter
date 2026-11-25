@@ -1,9 +1,16 @@
 /* 게임그래픽전공 공지 게시판에서 자동 수집한 제목 목록
    출처: https://www.tu.ac.kr/gart/sub05_01.do
    수집 스크립트: scrape-news.js  (갱신하려면  node scrape-news.js  재실행)
-   총 14건 */
+   총 15건 */
 window.NEWS_URL = "https://www.tu.ac.kr/gart/sub05_01.do";
 window.NEWS = [
+  {
+    "title": "2026 TU GAME CHALLENGE & G-STAR 학생 간담회 결과 공유",
+    "date": "2026-11-25",
+    "name": "정다연",
+    "notice": true,
+    "href": "https://www.tu.ac.kr/gart/?mode=view&articleNo=430112&article.offset=0&articleLimit=10"
+  },
   {
     "title": "2027-1학기 국가장학금 1차 신청기간 안내(2026. 11 . 24. (화) 9:00 ~)",
     "date": "2026-11-23",
